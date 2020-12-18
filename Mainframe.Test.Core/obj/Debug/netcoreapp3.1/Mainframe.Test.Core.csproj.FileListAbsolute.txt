@@ -1,0 +1,15 @@
+E:\Mainframe projects\Mainframe.Test.API\Mainframe.Test.Core\bin\Debug\netcoreapp3.1\Mainframe.Test.Core.deps.json
+E:\Mainframe projects\Mainframe.Test.API\Mainframe.Test.Core\bin\Debug\netcoreapp3.1\Mainframe.Test.Core.dll
+E:\Mainframe projects\Mainframe.Test.API\Mainframe.Test.Core\bin\Debug\netcoreapp3.1\Mainframe.Test.Core.pdb
+E:\Mainframe projects\Mainframe.Test.API\Mainframe.Test.Core\obj\Debug\netcoreapp3.1\Mainframe.Test.Core.csprojAssemblyReference.cache
+E:\Mainframe projects\Mainframe.Test.API\Mainframe.Test.Core\obj\Debug\netcoreapp3.1\Mainframe.Test.Core.AssemblyInfoInputs.cache
+E:\Mainframe projects\Mainframe.Test.API\Mainframe.Test.Core\obj\Debug\netcoreapp3.1\Mainframe.Test.Core.AssemblyInfo.cs
+E:\Mainframe projects\Mainframe.Test.API\Mainframe.Test.Core\obj\Debug\netcoreapp3.1\Mainframe.Test.Core.csproj.CoreCompileInputs.cache
+E:\Mainframe projects\Mainframe.Test.API\Mainframe.Test.Core\obj\Debug\netcoreapp3.1\Mainframe.Test.Core.dll
+E:\Mainframe projects\Mainframe.Test.API\Mainframe.Test.Core\obj\Debug\netcoreapp3.1\Mainframe.Test.Core.pdb
+E:\Mainframe projects\Mainframe.Test.API\Mainframe.Test.Core\bin\Debug\netcoreapp3.1\Mainframe.Test.Core.runtimeconfig.json
+E:\Mainframe projects\Mainframe.Test.API\Mainframe.Test.Core\bin\Debug\netcoreapp3.1\Mainframe.Test.Core.runtimeconfig.dev.json
+E:\Mainframe projects\Mainframe.Test.API\Mainframe.Test.Core\obj\Debug\netcoreapp3.1\Mainframe.Test.Core.genruntimeconfig.cache
+E:\Mainframe projects\Mainframe.Test.API\Mainframe.Test.Core\bin\Debug\netcoreapp3.1\Mainframe.Test.Data.dll
+E:\Mainframe projects\Mainframe.Test.API\Mainframe.Test.Core\bin\Debug\netcoreapp3.1\Mainframe.Test.Data.pdb
+E:\Mainframe projects\Mainframe.Test.API\Mainframe.Test.Core\obj\Debug\netcoreapp3.1\Mainframe.Test.Core.csproj.CopyComplete
