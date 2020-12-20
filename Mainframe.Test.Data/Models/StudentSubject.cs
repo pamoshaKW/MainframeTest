@@ -6,6 +6,7 @@ namespace Mainframe.Test.Data.Models
 {
     public class StudentSubject
     {
+        //Is this is Id needed?yes
         public int Id { get; set; }
         public Students Students { get; set; }
 

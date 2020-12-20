@@ -36,6 +36,8 @@ namespace Mainframe.Test.API
 
             services.AddScoped<IStudentBusinessEntity, StudentBusinessEntity>();
             services.AddScoped<IStudentDataService, StudentDataService>();
+            services.AddScoped<ISubjectBusinessEntity, SubjectBusinessEntity>();
+            services.AddScoped<ISubjectDataService, SubjectDataService>();
 
         }
 
@@ -64,7 +66,7 @@ namespace Mainframe.Test.API
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute("Default", "{controller=ValuesController}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute("Default", "{controller=StudentController}/{action=Index}/{id?}");
             });
         }
     }

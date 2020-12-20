@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Mainframe.Test.API\\Controllers",
+    "\\Mainframe.Test.Data",
+    "\\Mainframe.Test.Data\\Data Services",
+    "\\Mainframe.Test.Data\\Models"
+  ],
+  "SelectedNode": "\\Mainframe.Test.Data\\Data Services\\StudentDataService.cs",
+  "PreviewInSolutionExplorer": false
+}
