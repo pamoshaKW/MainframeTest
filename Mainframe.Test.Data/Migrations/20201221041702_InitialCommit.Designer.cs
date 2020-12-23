@@ -10,14 +10,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Mainframe.Test.Data.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20201218031555_InitialCommit")]
+    [Migration("20201221041702_InitialCommit")]
     partial class InitialCommit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-             
+                //.UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.1");
 
@@ -26,12 +26,9 @@ namespace Mainframe.Test.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-                    
+                        //.UseIdentityColumn();
 
                     b.Property<int?>("StudentsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SubjectId")
                         .HasColumnType("int");
 
                     b.Property<int?>("SubjectsId")
@@ -51,7 +48,7 @@ namespace Mainframe.Test.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-                        
+                       // .UseIdentityColumn();
 
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
@@ -75,7 +72,7 @@ namespace Mainframe.Test.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-                       
+                       // .UseIdentityColumn();
 
                     b.Property<int>("Credits")
                         .HasColumnType("int");

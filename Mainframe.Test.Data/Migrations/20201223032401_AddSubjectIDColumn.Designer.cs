@@ -4,18 +4,20 @@ using Mainframe.Test.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Mainframe.Test.Data.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20201223032401_AddSubjectIDColumn")]
+    partial class AddSubjectIDColumn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                //.UseIdentityColumns()
+               // .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.1");
 
@@ -24,7 +26,7 @@ namespace Mainframe.Test.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-                        //.UseIdentityColumn();
+                       // .UseIdentityColumn();
 
                     b.Property<int?>("StudentsId")
                         .HasColumnType("int");
@@ -46,7 +48,7 @@ namespace Mainframe.Test.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-                        //.UseIdentityColumn();
+                       // .UseIdentityColumn();
 
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
@@ -73,7 +75,7 @@ namespace Mainframe.Test.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-                      //  .UseIdentityColumn();
+                        //.UseIdentityColumn();
 
                     b.Property<int>("Credits")
                         .HasColumnType("int");

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "C1Ez98zT1BZQjJVJ8IJTCast7/zIYCIUSwgfKwKWU3WLeK+QwrhbfV6D2gosyu/ofB+VwAQ9GaHl+TRC/WXYeg==",
+  "dgSpecHash": "0iKwgLyRaKuQaNrT9Mh/5xVAtA143yelvKwbFp1lZ13l+OxEinsc78juo+7j4zBiYYsjNGxT0YVlVtq5Oib8ZA==",
   "success": true,
   "projectFilePath": "E:\\Mainframe projects\\Mainframe.Test.API\\Mainframe.Test.API\\Mainframe.Test.API.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.entityframeworkcore.design\\5.0.1\\microsoft.entityframeworkcore.design.5.0.1.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.1\\microsoft.entityframeworkcore.relational.5.0.1.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.1\\microsoft.entityframeworkcore.sqlserver.5.0.1.nupkg.sha512",
+    "C:\\Users\\Acer\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.1\\microsoft.entityframeworkcore.tools.5.0.1.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",

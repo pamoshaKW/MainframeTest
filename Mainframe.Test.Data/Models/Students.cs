@@ -12,8 +12,7 @@ namespace Mainframe.Test.Data.Models
         public string Address { get; set; }
         public int Age { get; set; }
 
-         
-
+        public int SubjectID { get; set; }
         public ICollection<StudentSubject>StudentSubjects { get; set; }
     }
 

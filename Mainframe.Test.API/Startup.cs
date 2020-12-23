@@ -38,6 +38,7 @@ namespace Mainframe.Test.API
             services.AddScoped<IStudentDataService, StudentDataService>();
             services.AddScoped<ISubjectBusinessEntity, SubjectBusinessEntity>();
             services.AddScoped<ISubjectDataService, SubjectDataService>();
+            services.AddScoped<IStudentSubjectDataService,StudentSubjectDataService>();
 
         }
 

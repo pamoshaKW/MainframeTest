@@ -18,11 +18,13 @@ namespace Mainframe.Test.Core.Business_Entities
     {
         private IStudentDataService studentDataService;
 
-        public StudentBusinessEntity(IStudentDataService studentDataService)
+        private IStudentSubjectDataService studentSubjectDataService;
+
+        public StudentBusinessEntity(IStudentDataService studentDataService,  IStudentSubjectDataService studentSubjectDataService)
         {
             this.studentDataService = studentDataService;
+            this.studentSubjectDataService = studentSubjectDataService;
         }
-
 
         public int AddStudent(StudentDto value)
         {
@@ -33,11 +35,14 @@ namespace Mainframe.Test.Core.Business_Entities
             student.Address = value.Address;
             student.Age = value.Age;
 
+
             return this.studentDataService.AddStudent(student);
         }
         public List<StudentDto> GetStudents()
         {
             var studentDtos = studentDataService.GetStudents();
+            var studentSubjectDtos = studentSubjectDataService.GetStudentSubjects();
+
 
             var studentDtoList = studentDtos.Select(p => new StudentDto()
             {
@@ -45,8 +50,20 @@ namespace Mainframe.Test.Core.Business_Entities
                 StudentName = p.StudentName,
                 Age = p.Age,
                 Address = p.Address,
-                Grade = p.Grade
+                Grade = p.Grade,
+                SubjectID=p.SubjectID
             }).ToList();
+
+
+            //studentDtoList.ForEach(p => {
+             //   var subject = studentSubjectDtos.FirstOrDefault(s => s.Su == p.SubjectID);
+
+             //   if (supplierBase != null)
+              //  {
+              //      p.DefaultSupplierBaseName = supplierBase.SupplierBaseName;
+              //  }
+
+           // });
 
             return studentDtoList;
 

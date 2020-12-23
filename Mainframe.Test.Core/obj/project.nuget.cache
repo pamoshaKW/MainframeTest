@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "90m9nGZb8QEl8B876nRkNGrEqzsLdp9o+dJOIDqahGGuo84NNv2F5l/kHjRxFubqbc6iL68wwCSTkXxAGeEXWg==",
+  "dgSpecHash": "+H3mbUy/aKZKQergd60DE+YqLEuapJkO1fFXvTyOJaPd5Rq9bu8bSWbgcVXCODQxgYCIzWKnFEWeM6e3Xep5DQ==",
   "success": true,
   "projectFilePath": "E:\\Mainframe projects\\Mainframe.Test.API\\Mainframe.Test.Core\\Mainframe.Test.Core.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.1\\microsoft.entityframeworkcore.analyzers.5.0.1.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.entityframeworkcore.design\\5.0.1\\microsoft.entityframeworkcore.design.5.0.1.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.1\\microsoft.entityframeworkcore.relational.5.0.1.nupkg.sha512",
+    "C:\\Users\\Acer\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.1\\microsoft.entityframeworkcore.tools.5.0.1.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
