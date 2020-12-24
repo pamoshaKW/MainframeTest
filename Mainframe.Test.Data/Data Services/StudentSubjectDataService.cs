@@ -9,7 +9,8 @@ namespace Mainframe.Test.Data.Data_Services
 
     public interface IStudentSubjectDataService : IBaseDataService
     {
-        IEnumerable<StudentSubject> GetStudentSubjects(); 
+        StudentSubject GetStudentSubjects(int id);
+       
     }
 
     
@@ -22,16 +23,22 @@ namespace Mainframe.Test.Data.Data_Services
             this.databaseContext = databaseContext;
         }
 
-        public IEnumerable<StudentSubject> GetStudentSubjects()
+        public StudentSubject GetStudentSubjects(int id)
         {
+
+
             var results = (from s in databaseContext.StudentSubject
-                           select s).ToList();
-            return results;
+                           where s.StudentsId == id
+                           select s);
+                           //.ToList();
+            return results.FirstOrDefault();
+            
         }
 
-        public void GetDetails(StudentSubject studentSubject)
+       /* public void GetDetails(StudentSubject studentSubject)
         {
             throw new NotImplementedException();
         }
+       */
     }
 }

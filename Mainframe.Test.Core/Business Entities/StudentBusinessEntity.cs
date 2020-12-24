@@ -11,8 +11,11 @@ namespace Mainframe.Test.Core.Business_Entities
     public interface IStudentBusinessEntity
     {
         int AddStudent(StudentDto value);
-         List<StudentDto> GetStudents();
+        List<StudentDto> GetStudents();
         StudentDto GetStudentById(int id);
+
+        StudentSubjectDto GetStudentSubjects(int id);
+
     }
     public class StudentBusinessEntity : IStudentBusinessEntity
     {
@@ -20,7 +23,7 @@ namespace Mainframe.Test.Core.Business_Entities
 
         private IStudentSubjectDataService studentSubjectDataService;
 
-        public StudentBusinessEntity(IStudentDataService studentDataService,  IStudentSubjectDataService studentSubjectDataService)
+        public StudentBusinessEntity(IStudentDataService studentDataService, IStudentSubjectDataService studentSubjectDataService)
         {
             this.studentDataService = studentDataService;
             this.studentSubjectDataService = studentSubjectDataService;
@@ -41,7 +44,7 @@ namespace Mainframe.Test.Core.Business_Entities
         public List<StudentDto> GetStudents()
         {
             var studentDtos = studentDataService.GetStudents();
-            var studentSubjectDtos = studentSubjectDataService.GetStudentSubjects();
+         //   var studentSubjectDtos = studentSubjectDataService.GetStudentSubjects();
 
 
             var studentDtoList = studentDtos.Select(p => new StudentDto()
@@ -51,19 +54,19 @@ namespace Mainframe.Test.Core.Business_Entities
                 Age = p.Age,
                 Address = p.Address,
                 Grade = p.Grade,
-                SubjectID=p.SubjectID
+               // SubjectID = p.SubjectID
             }).ToList();
 
 
             //studentDtoList.ForEach(p => {
-             //   var subject = studentSubjectDtos.FirstOrDefault(s => s.Su == p.SubjectID);
+            //   var subject = studentSubjectDtos.FirstOrDefault(s => s.Su == p.SubjectID);
 
-             //   if (supplierBase != null)
-              //  {
-              //      p.DefaultSupplierBaseName = supplierBase.SupplierBaseName;
-              //  }
+            //   if (supplierBase != null)
+            //  {
+            //      p.DefaultSupplierBaseName = supplierBase.SupplierBaseName;
+            //  }
 
-           // });
+            // });
 
             return studentDtoList;
 
@@ -72,7 +75,6 @@ namespace Mainframe.Test.Core.Business_Entities
         public StudentDto GetStudentById(int id)
         {
             var student = this.studentDataService.GetStudentByID(id);
-
             var studentDto = new StudentDto();
 
             studentDto.Id = student.Id;
@@ -80,8 +82,45 @@ namespace Mainframe.Test.Core.Business_Entities
             studentDto.Age = student.Age;
             studentDto.Address = student.Address;
             studentDto.Grade = student.Grade;
+        
+            /*studentDto.StudentSubjects = studentDataService.GetSubjectByStudent(studentDto.Id).Select(d => new StudentSubjectDto
+            {
+                Id = d.Id,
+                StudentId = student.Id,
+                SubjectId=student.SubjectID,
+                SubjectName=d.
+
+            }).ToList();
+
+            */
 
             return studentDto;
         }
+
+
+        public  StudentSubjectDto GetStudentSubjects(int id)
+        {
+           // var selectedStudent = studentDataService.GetStudentByID(id);
+            var subjectDetails = this.studentSubjectDataService.GetStudentSubjects(id);
+
+
+            var subjectOfaStudent= new StudentSubjectDto();
+
+            subjectOfaStudent.Id = subjectDetails.Id;
+            subjectOfaStudent.StudentsId = subjectDetails.StudentsId;
+            subjectOfaStudent.SubjectsId = subjectDetails.SubjectsId;
+            subjectOfaStudent.SubjectName = subjectDetails.SubjectName;
+            subjectOfaStudent.Credits = subjectDetails.Credits;
+            subjectOfaStudent.description = subjectDetails.description;
+            subjectOfaStudent.OfferedYear = subjectDetails.OfferedYear;
+            subjectOfaStudent.OfferedSemester = subjectDetails.OfferedSemester;
+           
+
+        
+
+            return subjectOfaStudent;
+        }
     }
+
+
 }
