@@ -11,7 +11,7 @@ namespace Mainframe.Test.API.Controllers
 {
 
     [Produces("application/json")]
-    [Route("api/Students/click")]
+    [Route("api/studentsubject")]
     public class StudentSubjectController : Controller
     {
         private IStudentBusinessEntity studentBusinessEntity;

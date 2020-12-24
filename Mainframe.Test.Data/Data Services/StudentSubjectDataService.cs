@@ -25,7 +25,12 @@ namespace Mainframe.Test.Data.Data_Services
 
         public StudentSubject GetStudentSubjects(int id)
         {
+           //     var innerJoinQuery =
+             //     from student in Students
+               //   join subject in Students on student.SubjectID equals subject.Id
+                 // select new { Id = student.Id, Id = subject.Id };
 
+      
 
             var results = (from s in databaseContext.StudentSubject
                            where s.StudentsId == id

@@ -12,11 +12,11 @@ namespace Mainframe.Test.Data.Models
 
         public int SubjectsId { get; set; }
 
-        public string SubjectName { get; set; }
-        public int Credits { get; set; }
-        public string description { get; set; }
-        public int OfferedYear { get; set; }
-        public int OfferedSemester { get; set; }
+       // public string SubjectName { get; set; }
+        //public int Credits { get; set; }
+        //public string description { get; set; }
+        //public int OfferedYear { get; set; }
+        //public int OfferedSemester { get; set; }
 
 
 

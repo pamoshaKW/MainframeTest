@@ -14,7 +14,7 @@ namespace Mainframe.Test.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .UseIdentityColumns()
+                //.UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.1");
 
@@ -22,8 +22,8 @@ namespace Mainframe.Test.Data.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("int");
+                        //.UseIdentityColumn();
 
                     b.Property<int>("Credits")
                         .HasColumnType("int");
@@ -59,8 +59,8 @@ namespace Mainframe.Test.Data.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("int");
+                       // .UseIdentityColumn();
 
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
@@ -86,8 +86,8 @@ namespace Mainframe.Test.Data.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
+                        .HasColumnType("int");
+                        //.UseIdentityColumn();
 
                     b.Property<int>("Credits")
                         .HasColumnType("int");
