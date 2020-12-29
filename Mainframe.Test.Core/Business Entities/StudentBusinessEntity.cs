@@ -6,6 +6,7 @@ using Mainframe.Test.Data.Data_Services;
 using Mainframe.Test.Data.Models;
 using System.Linq;
 
+
 namespace Mainframe.Test.Core.Business_Entities
 {
     public interface IStudentBusinessEntity
@@ -14,19 +15,21 @@ namespace Mainframe.Test.Core.Business_Entities
         List<StudentDto> GetStudents();
         StudentDto GetStudentById(int id);
 
-        StudentSubjectDto GetStudentSubjects(int id);
+       // List<StudentSubject> GetSubjectByStudent(int studentId);
 
     }
     public class StudentBusinessEntity : IStudentBusinessEntity
     {
         private IStudentDataService studentDataService;
 
-        private IStudentSubjectDataService studentSubjectDataService;
+  //      private IStudentSubjectDataService studentSubjectDataService;
 
-        public StudentBusinessEntity(IStudentDataService studentDataService, IStudentSubjectDataService studentSubjectDataService)
+        public StudentBusinessEntity(IStudentDataService studentDataService
+            //, IStudentSubjectDataService studentSubjectDataService
+            )
         {
             this.studentDataService = studentDataService;
-            this.studentSubjectDataService = studentSubjectDataService;
+ //           this.studentSubjectDataService = studentSubjectDataService;
         }
 
         public int AddStudent(StudentDto value)
@@ -41,6 +44,8 @@ namespace Mainframe.Test.Core.Business_Entities
 
             return this.studentDataService.AddStudent(student);
         }
+
+
         public List<StudentDto> GetStudents()
         {
             var studentDtos = studentDataService.GetStudents();
@@ -56,6 +61,8 @@ namespace Mainframe.Test.Core.Business_Entities
                 Grade = p.Grade,
                // SubjectID = p.SubjectID
             }).ToList();
+
+       
 
 
             //studentDtoList.ForEach(p => {
@@ -83,44 +90,62 @@ namespace Mainframe.Test.Core.Business_Entities
             studentDto.Address = student.Address;
             studentDto.Grade = student.Grade;
         
-            /*studentDto.StudentSubjects = studentDataService.GetSubjectByStudent(studentDto.Id).Select(d => new StudentSubjectDto
-            {
-                Id = d.Id,
-                StudentId = student.Id,
-                SubjectId=student.SubjectID,
-                SubjectName=d.
-
-            }).ToList();
-
-            */
+          
 
             return studentDto;
         }
 
 
-        public  StudentSubjectDto GetStudentSubjects(int id)
+        /*
+        public List<Subjects> GetSubjectByStudent(int studentId)
         {
-           // var selectedStudent = studentDataService.GetStudentByID(id);
-            var subjectDetails = this.studentSubjectDataService.GetStudentSubjects(id);
+
+            StudentSubjectDto studentSubjectDto = new StudentSubjectDto();
+
+            var StudentSubjects = studentDataService.GetSubjectByStudent(studentSubjectDto.Id);
+            var StudentSubjectsList = StudentSubjects.Select(d => new StudentSubjectDto
+            {
+                Id = d.Id,
+                StudentsId = d.Id,
+                SubjectsId = d.SubjectsId,
 
 
-            var subjectOfaStudent= new StudentSubjectDto();
+            }).ToList();
+            
 
-            subjectOfaStudent.Id = subjectDetails.Id;
-            subjectOfaStudent.StudentsId = subjectDetails.StudentsId;
-            subjectOfaStudent.SubjectsId = subjectDetails.SubjectsId;
-            subjectOfaStudent.SubjectName = subjectDetails.SubjectName;
-            subjectOfaStudent.Credits = subjectDetails.Credits;
-            subjectOfaStudent.description = subjectDetails.description;
-            subjectOfaStudent.OfferedYear = subjectDetails.OfferedYear;
-            subjectOfaStudent.OfferedSemester = subjectDetails.OfferedSemester;
-           
-
-        
-
-            return subjectOfaStudent;
+            return StudentSubjectsList;
         }
+
+        */
+
+            
+    /*
+    public  StudentSubjectDto GetStudentSubjects(int id)
+    {
+       // var selectedStudent = studentDataService.GetStudentByID(id);
+        var subjectDetails = this.studentSubjectDataService.GetStudentSubjects(id);
+
+
+        var subjectOfaStudent= new StudentSubjectDto();
+
+        subjectOfaStudent.Id = subjectDetails.Id;
+        subjectOfaStudent.StudentsId = subjectDetails.StudentsId;
+        subjectOfaStudent.SubjectsId = subjectDetails.SubjectsId;
+        subjectOfaStudent.SubjectName = subjectDetails.SubjectName;
+        subjectOfaStudent.Credits = subjectDetails.Credits;
+        subjectOfaStudent.description = subjectDetails.description;
+        subjectOfaStudent.OfferedYear = subjectDetails.OfferedYear;
+        subjectOfaStudent.OfferedSemester = subjectDetails.OfferedSemester;
+
+
+
+
+        return subjectOfaStudent;
     }
+
+    */
+}
+
 
 
 }

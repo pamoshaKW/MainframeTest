@@ -2,7 +2,7 @@
 
 namespace Mainframe.Test.Data.Migrations
 {
-    public partial class second : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,8 +15,7 @@ namespace Mainframe.Test.Data.Migrations
                     StudentName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Grade = table.Column<int>(type: "int", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Age = table.Column<int>(type: "int", nullable: false),
-                    SubjectID = table.Column<int>(type: "int", nullable: false)
+                    Age = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -44,19 +43,13 @@ namespace Mainframe.Test.Data.Migrations
                 name: "StudentSubject",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
                     StudentsId = table.Column<int>(type: "int", nullable: false),
                     SubjectsId = table.Column<int>(type: "int", nullable: false),
-                    SubjectName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Credits = table.Column<int>(type: "int", nullable: false),
-                    description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    OfferedYear = table.Column<int>(type: "int", nullable: false),
-                    OfferedSemester = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_StudentSubject", x => x.Id);
+                    table.PrimaryKey("PK_StudentSubject", x => new { x.StudentsId, x.SubjectsId });
                     table.ForeignKey(
                         name: "FK_StudentSubject_Students_StudentsId",
                         column: x => x.StudentsId,
@@ -70,11 +63,6 @@ namespace Mainframe.Test.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_StudentSubject_StudentsId",
-                table: "StudentSubject",
-                column: "StudentsId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_StudentSubject_SubjectsId",

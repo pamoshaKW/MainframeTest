@@ -14,41 +14,22 @@ namespace Mainframe.Test.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                //.UseIdentityColumns()
+               // .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.1");
 
             modelBuilder.Entity("Mainframe.Test.Data.Models.StudentSubject", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-                        //.UseIdentityColumn();
-
-                    b.Property<int>("Credits")
-                        .HasColumnType("int");
-
-                    b.Property<int>("OfferedSemester")
-                        .HasColumnType("int");
-
-                    b.Property<int>("OfferedYear")
-                        .HasColumnType("int");
-
                     b.Property<int>("StudentsId")
                         .HasColumnType("int");
-
-                    b.Property<string>("SubjectName")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("SubjectsId")
                         .HasColumnType("int");
 
-                    b.Property<string>("description")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("StudentsId");
+                    b.HasKey("StudentsId", "SubjectsId");
 
                     b.HasIndex("SubjectsId");
 
@@ -60,7 +41,7 @@ namespace Mainframe.Test.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-                       // .UseIdentityColumn();
+                     //   .UseIdentityColumn();
 
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
@@ -74,9 +55,6 @@ namespace Mainframe.Test.Data.Migrations
                     b.Property<string>("StudentName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("SubjectID")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.ToTable("Students");
@@ -87,7 +65,7 @@ namespace Mainframe.Test.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-                        //.UseIdentityColumn();
+                      //  .UseIdentityColumn();
 
                     b.Property<int>("Credits")
                         .HasColumnType("int");

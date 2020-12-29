@@ -7,11 +7,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace Mainframe.Test.API.Controllers
 {
 
     [Produces("application/json")]
-    [Route("api/Students")]
+    [Route("api/students")]
     public class StudentController : Controller
     {
         private IStudentBusinessEntity studentBusinessEntity;
@@ -26,6 +27,7 @@ namespace Mainframe.Test.API.Controllers
         public IEnumerable<StudentDto> GetStudents()
         {
             return this.studentBusinessEntity.GetStudents();
+          
         }
 
         [HttpPost]

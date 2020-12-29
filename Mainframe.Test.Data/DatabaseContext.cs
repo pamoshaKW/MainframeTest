@@ -14,5 +14,13 @@ namespace Mainframe.Test.Data
         public DbSet<Students> Students { get; set; }
         public DbSet<Subjects> Subjects { get; set; }
         public DbSet<StudentSubject>StudentSubject {get; set;}
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<StudentSubject>()
+                .HasKey(cs => new { cs.StudentsId, cs.SubjectsId });
+        }
+
+        
     }
 }

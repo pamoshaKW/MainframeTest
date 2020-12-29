@@ -12,7 +12,7 @@ namespace Mainframe.Test.Core.Dtos
         public string Address { get; set; }
         public int Age { get; set; }
 
-      //  public int SubjectID { get; set; }
+    //   public int SubjectID { get; set; }
 
       //  public string SubjectName { get; set; }
 

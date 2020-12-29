@@ -12,8 +12,7 @@ namespace Mainframe.Test.Data.Data_Services
         IEnumerable<Students> GetStudents();
         Students GetStudentByID(int id);
         
-        // IEnumerable<StudentSubject> GetSubjectByStudent(int studentId);
-
+     
     }
     public class StudentDataService: BaseDataService,IStudentDataService
     {
@@ -52,18 +51,8 @@ namespace Mainframe.Test.Data.Data_Services
 
         }
 
-      /*
-        public IEnumerable<StudentSubject> GetSubjectByStudent(int studentId)
-        {
-            var subjectDetails = (from ss in databaseContext.StudentSubject
-                                where ss.StudentsId == studentId
-                                select ss).ToList();
-            return subjectDetails;
-        }
-      */
-
-
-
+      
+       
 
     }
 

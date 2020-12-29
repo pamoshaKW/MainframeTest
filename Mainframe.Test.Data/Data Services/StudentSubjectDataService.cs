@@ -1,49 +1,75 @@
 ﻿using Mainframe.Test.Data.Models;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
+using System.Text;
 
 namespace Mainframe.Test.Data.Data_Services
 {
 
     public interface IStudentSubjectDataService : IBaseDataService
     {
-        StudentSubject GetStudentSubjects(int id);
-       
-    }
+        IEnumerable<StudentSubject> GetSubjectByStudent(int studentId);
+        int AssignSubject(StudentSubject value);
 
-    
-    public class StudentSubjectDataService:BaseDataService,IStudentSubjectDataService
+      // public IEnumerable<StudentSubject> GetSubjectByStudentId(int studentId);
+
+    }
+   public  class StudentSubjectDataService :BaseDataService,IStudentSubjectDataService
     {
         private DatabaseContext databaseContext;
 
-        public StudentSubjectDataService(DatabaseContext databaseContext) : base(databaseContext)
+        public StudentSubjectDataService(DatabaseContext databaseContext):base(databaseContext)
         {
-            this.databaseContext = databaseContext;
+            this.databaseContext = databaseContext;  
         }
 
-        public StudentSubject GetStudentSubjects(int id)
+
+        public IEnumerable<StudentSubject> GetSubjectByStudent(int studentId)
         {
-           //     var innerJoinQuery =
-             //     from student in Students
-               //   join subject in Students on student.SubjectID equals subject.Id
-                 // select new { Id = student.Id, Id = subject.Id };
+       
+            var subjectDetails = (from ss in databaseContext.StudentSubject
+                                      where ss.StudentsId == studentId
+                                      select ss).ToList();
+            return subjectDetails;
+      
+   
+        }
 
       
 
-            var results = (from s in databaseContext.StudentSubject
-                           where s.StudentsId == id
-                           select s);
-                           //.ToList();
-            return results.FirstOrDefault();
-            
+        public int AssignSubject(StudentSubject value)
+        {
+            databaseContext.StudentSubject.Add(value);
+            databaseContext.SaveChanges();
+            return value.Id;
         }
 
-       /* public void GetDetails(StudentSubject studentSubject)
+
+
+
+        /*My pracice
+        public IEnumerable<StudentSubject> GetSubjectsByStudentId(int studentId)
         {
-            throw new NotImplementedException();
+            var subjects = (from x in databaseContext.StudentSubject
+                            where x.StudentsId == studentId
+                            select x).ToList();
+            return subjects;
         }
-       */
+
+
+
+
+        public void insertSubject(StudentSubject ss)
+        {
+            databaseContext.StudentSubject.Add(ss);
+            databaseContext.SaveChanges();
+           
+        }
+*/
+
     }
 }
+
+
+
