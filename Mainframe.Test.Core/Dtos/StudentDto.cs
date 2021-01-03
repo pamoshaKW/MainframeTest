@@ -16,6 +16,6 @@ namespace Mainframe.Test.Core.Dtos
 
       //  public string SubjectName { get; set; }
 
-        public ICollection<StudentSubjectDto> StudentSubjects { get; set; }
+        public List<StudentSubjectDto> StudentSubjects { get; set; }
     }
 }

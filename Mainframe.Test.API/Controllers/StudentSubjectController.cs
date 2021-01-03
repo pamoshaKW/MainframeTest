@@ -16,23 +16,30 @@ namespace Mainframe.Test.API.Controllers
     public class StudentSubjectController : Controller
     {
         private IStudentSubjectBusinessEntity studentSubjectBusinessEntity;
+        private ISubjectBusinessEntity subjectBusinessEntity;
 
-        public StudentSubjectController(IStudentSubjectBusinessEntity studentSubjectBusinessEntity)
+        public StudentSubjectController(IStudentSubjectBusinessEntity studentSubjectBusinessEntity, ISubjectBusinessEntity subjectBusinessEntity)
         {
             this.studentSubjectBusinessEntity = studentSubjectBusinessEntity;
+            this.subjectBusinessEntity = subjectBusinessEntity;
         }
+       
+        
+        /*
         [HttpGet]
         public string GetStudents()
         {
             return "Hello";
         }
 
+        */
+
         // GET: SubjectController/Details/5
         [HttpGet("{id}")]
         public IEnumerable<StudentSubjectDto> GetSubjectByStudent(int id)
         {
             IEnumerable<StudentSubjectDto> list = studentSubjectBusinessEntity.GetSubjectByStudent(id);
-          //  Debug.WriteLine(list);
+
             return list;
         }
 
@@ -42,5 +49,18 @@ namespace Mainframe.Test.API.Controllers
             return studentSubjectBusinessEntity.AssignSubject(value);
         }
 
+        
+        [HttpGet]
+            public SubjectDto GetResultingSubject(int subjectId)
+        {
+            var subjectIDs = this.subjectBusinessEntity.GetSubjectById(subjectId);
+
+            return subjectIDs;
+        }
+
+             
+                        
+          
     }
+
 }

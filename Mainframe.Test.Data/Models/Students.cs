@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Mainframe.Test.Data.Models
 {
-    public class Students
+    public class Student
     {
         public int Id { get; set; }
         public string StudentName { get; set; }
@@ -13,7 +13,7 @@ namespace Mainframe.Test.Data.Models
         public int Age { get; set; }
 
      // public int SubjectID { get; set; }
-        public ICollection<StudentSubject>StudentSubjects { get; set; }
+        public List<StudentSubject>StudentSubjects { get; set; }
     }
 
 

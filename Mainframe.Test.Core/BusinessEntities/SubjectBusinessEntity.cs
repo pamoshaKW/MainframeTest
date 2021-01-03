@@ -28,10 +28,10 @@ namespace Mainframe.Test.Core.Business_Entities
 
         public int AddSubject(SubjectDto subjectDto)
         {
-            var subject = new Subjects();
+            var subject = new Subject();
 
             subject.SubjectName = subjectDto.SubjectName;
-            subject.description = subjectDto.description;
+            subject.Description = subjectDto.Description;
             subject.Credits = subjectDto.Credits;
             subject.OfferedSemester = subjectDto.OfferedSemester;
             subject.OfferedYear = subjectDto.OfferedYear;
@@ -48,7 +48,7 @@ namespace Mainframe.Test.Core.Business_Entities
             {
                 Id = p.Id,
                 SubjectName = p.SubjectName,
-                description = p.description,
+                Description = p.Description,
                 Credits = p.Credits,
                 OfferedYear = p.OfferedYear,
                 OfferedSemester = p.OfferedSemester
@@ -70,7 +70,7 @@ namespace Mainframe.Test.Core.Business_Entities
             subjectDto.Id = subject.Id;
             subjectDto.SubjectName = subject.SubjectName;
             subjectDto.Credits = subject.Credits;
-            subjectDto.description = subject.description;
+            subjectDto.Description = subject.Description;
             subjectDto.OfferedYear = subject.OfferedYear;
             subjectDto.OfferedSemester = subject.OfferedSemester;
 

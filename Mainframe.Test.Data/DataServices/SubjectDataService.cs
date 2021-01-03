@@ -8,9 +8,9 @@ namespace Mainframe.Test.Data.Data_Services
 {
     public interface ISubjectDataService : IBaseDataService
     {
-        public int AddSubject(Subjects subject);
-        public IEnumerable<Subjects> GetSubjects();
-        public Subjects GetSubjectById(int id);
+        public int AddSubject(Subject subject);
+        public List<Subject> GetSubjects();
+        public Subject GetSubjectById(int id);
 
     }
 
@@ -23,21 +23,21 @@ namespace Mainframe.Test.Data.Data_Services
 
         }
 
-        public int AddSubject(Subjects subject)
+        public int AddSubject(Subject subject)
         {
             databaseContext.Subjects.Add(subject);
             databaseContext.SaveChanges();
             return subject.Id;
         }
 
-        public IEnumerable<Subjects> GetSubjects()
+        public List<Subject> GetSubjects()
         {
             var subjects = (from s in databaseContext.Subjects
                             select s).ToList();
             return subjects;
         }
 
-        public Subjects GetSubjectById(int id)
+        public Subject GetSubjectById(int id)
         {
             var subject = (from s in databaseContext.Subjects
                            where s.Id == id

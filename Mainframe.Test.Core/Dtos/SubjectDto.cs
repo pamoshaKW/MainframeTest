@@ -9,10 +9,10 @@ namespace Mainframe.Test.Core.Dtos
         public int Id { get; set; }
         public string SubjectName { get; set; }
         public int Credits { get; set; }
-        public string description { get; set; }
+        public string Description { get; set; }
         public int OfferedYear { get; set; }
         public int OfferedSemester { get; set; }
 
-        public ICollection<StudentSubjectDto> StudentSubjects { get; set; }
+        public List<StudentSubjectDto> StudentSubjects { get; set; }
     }
 }

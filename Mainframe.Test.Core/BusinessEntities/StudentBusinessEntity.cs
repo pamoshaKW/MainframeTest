@@ -34,7 +34,7 @@ namespace Mainframe.Test.Core.Business_Entities
 
         public int AddStudent(StudentDto value)
         {
-            var student = new Students();
+            var student = new Student();
             student.Id = value.Id;
             student.StudentName = value.StudentName;
             student.Grade = value.Grade;
@@ -48,11 +48,11 @@ namespace Mainframe.Test.Core.Business_Entities
 
         public List<StudentDto> GetStudents()
         {
-            var studentDtos = studentDataService.GetStudents();
+            var students = studentDataService.GetStudents();
          //   var studentSubjectDtos = studentSubjectDataService.GetStudentSubjects();
 
 
-            var studentDtoList = studentDtos.Select(p => new StudentDto()
+            var studentDtoList = students.Select(p => new StudentDto()
             {
                 Id = p.Id,
                 StudentName = p.StudentName,

@@ -11,9 +11,11 @@ namespace Mainframe.Test.Data
     {
 
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options) { }
-        public DbSet<Students> Students { get; set; }
-        public DbSet<Subjects> Subjects { get; set; }
-        public DbSet<StudentSubject>StudentSubject {get; set;}
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Subject> Subjects { get; set; }
+        public DbSet<StudentSubject>StudentSubjects {get; set;}
+
+        public DbSet<Grade> Grades { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

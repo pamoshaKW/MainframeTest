@@ -34,7 +34,7 @@ namespace Mainframe.Test.API
             services.AddMvc();
             services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(Configuration.GetConnectionString("StudentDatabase")));
 
-           services.AddScoped<IStudentBusinessEntity, StudentBusinessEntity>();
+            services.AddScoped<IStudentBusinessEntity, StudentBusinessEntity>();
             services.AddScoped<IStudentDataService, StudentDataService>();
             services.AddScoped<ISubjectBusinessEntity, SubjectBusinessEntity>();
             services.AddScoped<ISubjectDataService, SubjectDataService>();
